@@ -309,8 +309,8 @@ const loginUser = asyncHandler( async ( req, res ) => {
             secure: process.env.APP_ENV === 'production' ? true : false,   // Set to false if you are testing over HTTP, true for HTTPS
             path: '/',       // Ensure cookies are available site-wide
             magAge: 60 * 60 * 1000,
-            sameSite: 'None',
-            domain: process.env.CORS_DOMAIN
+            sameSite: 'Strict',
+            // domain: process.env.CORS_DOMAIN
         };
 
         return res
@@ -349,8 +349,8 @@ const logoutUser = asyncHandler( async ( req, res) => {
         secure: process.env.APP_ENV === 'production' ? true : false,   // Set to false if you are testing over HTTP, true for HTTPS
         path: '/',       // Ensure cookies are available site-wide
         magAge: 60 * 60 * 1000,
-        sameSite: 'None',
-        domain: process.env.CORS_DOMAIN
+        sameSite: 'Strict',
+        // domain: process.env.CORS_DOMAIN
     };
 
     return res
